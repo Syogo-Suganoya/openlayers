@@ -192,6 +192,7 @@ function compileExpression(expression, context) {
     }
     // TODO: unimplemented
     // Ops.Zoom
+    // Ops.Rotation
     // Ops.Time
     // Ops.Band
     // Ops.Palette
