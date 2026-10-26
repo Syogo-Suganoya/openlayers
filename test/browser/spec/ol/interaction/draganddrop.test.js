@@ -135,6 +135,7 @@ where('FileReader').describe('ol.interaction.DragAndDrop', function () {
           );
           assert.strictEqual(mockReadAsText, true);
           assert.strictEqual(mockReadAsArrayBuffer, false);
+          assert.instanceOf(evt.format, GeoJSON);
           resolve();
         });
         interaction.setMap(map);
@@ -224,6 +225,7 @@ where('FileReader').describe('ol.interaction.DragAndDrop', function () {
           assert.strictEqual(evt.features.length, 1);
           assert.strictEqual(mockReadAsText, false);
           assert.strictEqual(mockReadAsArrayBuffer, true);
+          assert.instanceOf(evt.format, GeoJSON);
           resolve();
         });
 
