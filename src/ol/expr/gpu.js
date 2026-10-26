@@ -255,6 +255,7 @@ const compilers = {
   },
   [Ops.Resolution]: () => 'u_resolution',
   [Ops.Zoom]: () => 'u_zoom',
+  [Ops.Rotation]: () => 'u_rotation',
   [Ops.Time]: () => 'u_time',
   [Ops.Any]: createCompiler((compiledArgs) => `(${compiledArgs.join(` || `)})`),
   [Ops.All]: createCompiler((compiledArgs) => `(${compiledArgs.join(` && `)})`),

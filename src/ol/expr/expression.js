@@ -34,6 +34,7 @@ import {toSize} from '../size.js';
  *     `Circle` geometries are returned as 'Polygon'
  *     `GeometryCollection` geometries are returned as the type of the first geometry found in the collection (WebGL only).
  *   * `['resolution']` returns the current resolution
+ *   * `['rotation']` returns the current view rotation in radians (WebGL only).
  *   * `['time']` The time in seconds since the creation of the layer (WebGL only).
  *   * `['var', 'varName']` fetches a value from the style variables; will throw an error if that variable is undefined
  *   * `['zoom']` The current zoom level (WebGL only).
@@ -409,6 +410,7 @@ export const Ops = {
   Not: '!',
   Resolution: 'resolution',
   Zoom: 'zoom',
+  Rotation: 'rotation',
   Time: 'time',
   Equal: '==',
   NotEqual: '!=',
@@ -471,6 +473,7 @@ const parsers = {
   [Ops.LineMetric]: createCallExpressionParser(usesMCoordinate, withNoArgs),
   [Ops.Resolution]: createCallExpressionParser(usesMapState, withNoArgs),
   [Ops.Zoom]: createCallExpressionParser(usesMapState, withNoArgs),
+  [Ops.Rotation]: createCallExpressionParser(usesMapState, withNoArgs),
   [Ops.Time]: createCallExpressionParser(usesMapState, withNoArgs),
   [Ops.Any]: createCallExpressionParser(
     hasArgsCount(2, Infinity),
